@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/analyze.css">
+    <script src="./lib/handlebars-v4.0.10.js"></script>
+    <script src="./lib/jquery-3.2.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="imgWrapper">
+        ![](./img/blackimg.png)
+    </div>
+    
+    <form enctype="multipart/form-data">
+        <input type="file" id="testImg" onchange="detectImg()">
+    </form>
+    
+    <div id="result">
+        <p>年齡:</p>
+        <p>性別:</p>
+        <p>種族:</p>
+        <p>是否配戴眼鏡:</p>
+        <div>
+            <p>皮膚狀況:</p>
+            <p>粉刺:</p>
+            <p>黑眼圈:</p>
+        </div>
+    </div>
+
+    <button class="btn btn-danger btn-lg btn-block">bodyshoptest</button>
+
+    <script id="tpl" type="text/template">
+        <p>年齡:{{age}}</p>
+        <p>性別:{{gender}}</p>
+        <p>種族:{{ethnicity}}</p>
+        <p>是否配戴眼鏡:{{glass}}</p>
+        <div>
+            <p>皮膚狀況:{{skinstatus.health}}</p>
+            <p>粉刺:{{skinstatus.acne}}</p>
+            <p>黑眼圈:{{skinstatus.dark_circle}}</p>
+        </div>
+    </script>
+
+    <script src="./js/analyze.js"></script>
+</body>
+</html>
